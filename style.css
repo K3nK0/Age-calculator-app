@@ -1,0 +1,115 @@
+:root {
+    --colorPurple: hsl(259, 100%, 65%);
+    --colorLightRed: hsl(0, 100%, 67%);
+
+    --colorWhite: hsl(0, 0%, 100%);
+    --colorOffWhite: hsl(0, 0%, 94%);
+    --colorLightGrey: hsl(0, 0%, 86%);
+    --colorSmokeyGrey: hsl(0, 1%, 44%);
+    --colorOffBlack: hsl(0, 0%, 8%);
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 32px;
+    font-family: Poppins;
+}
+
+body {
+    height: 100vh;
+    background: var(--colorOffWhite);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    height: 500px;
+    width: 650px;
+    padding: 50px;
+    border-radius: 20px 20px 130px 20px;
+    background: var(--colorWhite);
+}
+
+form {
+    position: relative;
+    /* background: lightblue; */
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--colorLightGrey);
+}
+
+form .input {
+    position: relative;
+    width: 21%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* background: lightcoral; */
+}
+
+form .input input {
+    width: 100%;
+    height: 50px;
+    padding-left: 16px;
+    border: none;
+    border: 1px solid var(--colorLightGrey);
+    border-radius: 5px;
+}
+
+.card form button {
+    position: absolute;
+    background-color: hsl(259, 100%, 65%);
+    padding: 13px;
+    border: none;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    right: 0;
+    bottom: -40px;
+}
+
+.card form button svg {
+    width: 75%;
+}
+
+label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-weight: 700;
+    transform: scaleY(.94);
+    color: var(--colorSmokeyGrey);
+}
+
+::placeholder {
+    position: absolute;
+    bottom: 9px;
+    font-weight: 800;
+    font-size: 1.9em;
+}
+
+.result {
+    /* background: lightgreen; */
+    margin-top: 35px;
+}
+
+.result p {
+    font-size: 2.4em;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.1em;
+}
+
+.result p span {
+    color: var(--colorPurple);
+    letter-spacing: .2em;
+}
