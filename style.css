@@ -104,6 +104,11 @@ label {
     color: var(--colorSmokeyGrey);
 }
 
+.input-error {
+    color: var(--colorLightRed);
+    font-size: .3em;
+}
+
 .result {
     /* background: lightgreen; */
     margin-top: 35px;
@@ -118,7 +123,7 @@ label {
 
 .result p span {
     color: var(--colorPurple);
-    letter-spacing: .2em;
+    /* letter-spacing: .1em; */
 }
 
 /* MOBILE */

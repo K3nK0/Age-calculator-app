@@ -23,19 +23,22 @@
   <div class="card">
 
     <form>
-      <div class="input">
-        <label for="day">Day</label>
+      <div class="input" id="input-day">
+        <label for="day" id="label-day">Day</label>
         <input type="text" name="day" id="day" placeholder="DD">
+        <p class="input-error" id="error-day"></p>
       </div>
 
-      <div class="input">
-        <label for="month">Month</label>
+      <div class="input" id="input-month">
+        <label for="month" id="label-month">Month</label>
         <input type="text" name="month" id="month" placeholder="MM">
+        <p class="input-error" id="error-month"></p>
       </div>
 
-      <div class="input">
-        <label for="year">Year</label>
+      <div class="input" id="input-year">
+        <label for="year" id="label-year">Year</label>
         <input type="text" name="year" id="year" placeholder="YYYY">
+        <p class="input-error" id="error-year"></p>
       </div>
 
       <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg></button>
@@ -43,9 +46,9 @@
 
     <div class="result">
 
-      <p><span id="years">--</span>years</p>
-      <p><span id="months">--</span>months</p>
-      <p><span id="days">--</span>days</p>
+      <p><span id="years">--</span> years</p>
+      <p><span id="months">--</span> months</p>
+      <p><span id="days">--</span> days</p>
 
     </div>
 
