@@ -86,7 +86,9 @@ form .input input:focus {
     right: 0;
     bottom: -40px;
     cursor: pointer;
+    transition: background .2s ease-in-out;
 }
+
 .card form button:hover {
     background-color: var(--colorOffBlack);
 }
