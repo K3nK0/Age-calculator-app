@@ -6,7 +6,7 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/K3nK0/Age-calculator-app)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://age-calculator-app-amber.vercel.app/)
 
 ## Author
 
