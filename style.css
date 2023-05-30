@@ -125,8 +125,9 @@ label {
 
 .result p span {
     color: var(--colorPurple);
-    /* letter-spacing: .1em; */
+    opacity: 1;
 }
+
 
 /* MOBILE */
 
