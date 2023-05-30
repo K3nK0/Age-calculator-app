@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const labelYear = document.getElementById('label-year');
   const textErrorYear = document.getElementById('error-year');
 
+  
+
 
   // Ajoute un écouteur d'événement pour la soumission du formulaire
   form.addEventListener('submit', (e) => {
@@ -42,6 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
     labelYear.style.color = "hsl(0, 1%, 44%)";
     year.style.border = "1px solid hsl(0, 1%, 44%)";
 
+    const dayValue = parseInt(day.value)
+    const monthValue = parseInt(month.value)
+    const yearValue = parseInt(year.value)
+
     e.preventDefault(); // Empêche le rechargement de la page
     checkDay();
     checkMonth();
@@ -49,9 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (checkDay() === false && checkMonth() === false && checkYear() === false ){
 
-      const dayValue = parseInt(day.value)
-      const monthValue = parseInt(month.value)
-      const yearValue = parseInt(year.value)
+      
 
       // Calcul de l'âge en années, mois et jours
       let ageYears = currentYear - yearValue;
@@ -71,20 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ageDays = remainingDays < 0 ? daysInPreviousMonth : remainingDays;
         }
 
-      // Si le mois actuel est égal au mois de naissance, vérifie le jour actuel
-      if (currentMonth === monthValue) {
-        if (currentDay < dayValue) {
-          ageYears--;
-          ageMonths = 11;
-          let daysInPreviousMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
-          let remainingDays = daysInPreviousMonth - (dayValue - currentDay);
-          ageDays = remainingDays < 0 ? daysInPreviousMonth : remainingDays;
-        } else if (currentDay > dayValue) {
-          ageDays = currentDay - dayValue;
-        } else {
-          ageDays = 0;
-        }
-      }
+
 
       // Affiche les résultats dans l'interface utilisateur
       document.getElementById('years').textContent = ageYears;
@@ -105,6 +96,15 @@ document.addEventListener('DOMContentLoaded', function() {
       textErrorDay.innerText = "Must be a valid day";
       labelDay.style.color = "hsl(0, 100%, 67%)";
       day.style.border = "1px solid hsl(0, 100%, 67%)";
+    }
+    else if(parseInt(year.value) === currentYear && parseInt(month.value) === currentMonth && parseInt(day.value) > currentDay){
+      textErrorDay.innerText = "Must be a valid date";
+      labelDay.style.color = "hsl(0, 100%, 67%)";
+      day.style.border = "1px solid hsl(0, 100%, 67%)";
+      labelMonth.style.color = "hsl(0, 100%, 67%)";
+      month.style.border = "1px solid hsl(0, 100%, 67%)";
+      labelYear.style.color = "hsl(0, 100%, 67%)";
+      year.style.border = "1px solid hsl(0, 100%, 67%)";
     }
     else{
       const monthValue = parseInt(month.value);
@@ -137,7 +137,16 @@ document.addEventListener('DOMContentLoaded', function() {
       labelMonth.style.color = "hsl(0, 100%, 67%)";
       month.style.border = "1px solid hsl(0, 100%, 67%)";
     }
-    else{
+    else if(parseInt(year.value) === currentYear && parseInt(month.value) > currentMonth){
+      labelDay.style.color = "hsl(0, 100%, 67%)";
+      day.style.border = "1px solid hsl(0, 100%, 67%)";
+      textErrorMonth.innerText = "Must be a valid date";
+      labelMonth.style.color = "hsl(0, 100%, 67%)";
+      month.style.border = "1px solid hsl(0, 100%, 67%)";
+      labelYear.style.color = "hsl(0, 100%, 67%)";
+      year.style.border = "1px solid hsl(0, 100%, 67%)";
+    }
+    else {
       return false;
     }
   }
