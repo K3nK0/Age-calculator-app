@@ -46,9 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
     checkDay();
     checkMonth();
     checkYear();
-      
-    let checkDayResult = checkDay()
-    console.log(checkDayResult);
 
     if (checkDay() === false && checkMonth() === false && checkYear() === false ){
 
@@ -67,9 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
         ageMonths = 12 - (monthValue - currentMonth);
       }
 
+      if (currentDay < dayValue) {
+        ageMonths--;
+        let daysInPreviousMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
+        let remainingDays = daysInPreviousMonth - (dayValue - currentDay);
+        ageDays = remainingDays < 0 ? daysInPreviousMonth : remainingDays;
+        }
+
       // Si le mois actuel est égal au mois de naissance, vérifie le jour actuel
       if (currentMonth === monthValue) {
-        if (currentDay > dayValue) {
+        if (currentDay < dayValue) {
           ageYears--;
           ageMonths = 11;
           let daysInPreviousMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
